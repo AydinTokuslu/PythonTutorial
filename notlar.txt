@@ -1,0 +1,3 @@
+ali veeli adli ogrencinin, basari notu 67.6, bu derste elde ettigi harf notu DC
+enis ali adli ogrencinin, basari notu 86.0, bu derste elde ettigi harf notu BA
+sare tokus adli ogrencinin, basari notu 89.2, bu derste elde ettigi harf notu BA
