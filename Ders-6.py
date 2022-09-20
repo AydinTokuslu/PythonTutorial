@@ -35,7 +35,8 @@ def ogrenci_yazdir():
 
 	with open("notlar.txt","a", encoding="utf-8") as dosya:
 		dosya.write("{} adli ogrencinin, basari notu {}, bu derste elde ettigi harf notu {}\n".format(bilgi, sonuc, harf_notu))
-
+		dosya.close()
 kac_ogrenci=int(input("kaç tane öğrenci kaydedeceksiniz? : "))
 for i in range(kac_ogrenci):
 	ogrenci_yazdir()
+

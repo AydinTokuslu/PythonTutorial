@@ -47,8 +47,8 @@ class Sirket():
                 id = int(dosya.readlines()[-1].split(")")[0]) + 1
 
         with open("calisanlar.txt","a+", encoding="utf-8") as dosya:
-            dosya.write("{})-{}-{}-{}-{}-{}\n".format(id,ad,soyad,yas,cinsiyet,maas))
-
+            dosya.write("{}){}-{}-{}-{}-{}\n".format(id,ad,soyad,yas,cinsiyet,maas))
+            dosya.close()
     def calisanCikar(self):
         with open("calisanlar.txt","r") as dosya:
             calisanlar=dosya.readlines()
@@ -77,7 +77,7 @@ class Sirket():
 
         with open("calisanlar.txt", "w", encoding="utf-8") as dosya:
             dosya.writelines(dCalisanlar)
-
+            dosya.close()
     def verilecekMaasGoster(self,hesap="a"):
         #'''hesap = a ise aylık, y ise yıllık hesap '''
         with open("calisanlar.txt", "r") as dosya:
@@ -106,6 +106,7 @@ class Sirket():
             tButce=tButce-toplamMaas
         with open("butce.txt","w") as dosya:
             dosya.write(str(tButce))
+            dosya.close()
 
     def masrafGir(self):
         pass
