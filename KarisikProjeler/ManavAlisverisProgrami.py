@@ -2,37 +2,76 @@ import self as self
 
 
 class Manav():
-    def __init__(self,urunListesi=[],urunFiyatlari=[]):
-        self.calisma=True
-        self.urunListesi = urunListesi
-        self.urunFiyatlari = urunFiyatlari
+    def __init__(self,urunListesi=[]):
+        self.durum=True
+        self.urunListesi=urunListesi
 
     def menu(self):
-        self.urunListesi.append("domat - urun kodu :1")
-        self.urunListesi.append("muz - urun kodu : 2")
-        self.urunListesi.append("elma - urun kodu : 3")
-        self.urunListesi.append("erik - urun kodu : 4")
-        self.urunListesi.append("cilek - urun kodu : 5")
 
-        self.urunFiyatlari.append(15.0)
-        self.urunFiyatlari.append(18.0)
-        self.urunFiyatlari.append(8.0)
-        self.urunFiyatlari.append(47.0)
-        self.urunFiyatlari.append(27.0)
+        while True:
+            print("""
+            **** Elif Manava hoş geldiniz ****
+            1- Urun Ekleme
+            2- Urun Silme
+            3- Urun Seçme
+            4- Urun Odeme
+            5- Urun Listeleme
+            6- Çıkış
+            """)
 
-        print(self.urunListesi+self.urunFiyatlari)
-        secim = self.musteriSecim(self.urunFiyatlari)
+            tercih = int(input("Lütfen yapmak istediğiniz işlemi giriniz : "))
+
+            if tercih == 1:
+                self.urunEkle()
+                break
+            if tercih == 2:
+                self.urunSilme()
+                break
+            if tercih == 3:
+                self.urunSecme()
+                break
+            if tercih == 4:
+                self.urunOdeme()
+                break
+            if tercih == 5:
+                self.urunListeleme()
+                break
+            if tercih == 6:
+                self.cikis()
+                break
 
 
-    def kasa(self):
-        print("Yapacağınız toplam ödeme : {}".format(toplamOdeme))
+    def urunEkle(self):
+        urunIsmi = input("Ürün ismi giriniz : ")
+        urunFiyati = int(input("Ürün fiyatı giriniz : "))
 
+        self.urunListesi.append(urunIsmi + " - " + str(urunFiyati))
+    def urunOdeme(self):
+        self.urunSecme()
+        print("Yapacağınız toplam ödeme : {}".format(self.toplamOdeme))
 
-    def musteriSecim(self):
+    def cikis(self):
+        self.durum=False
+    def urunSilme(self):
+        silinecekUrun=input("Lütfen silmek istediğiniz ürünü yazın : ")
+        self.urunListesi.remove(silinecekUrun)
 
-        secim=int(input("seçtiğiniz ürün kodunu giriniz : "))
-        kilo=float(input("seçtiğiniz üründen kaç kilo alacaksınız? : "))
-        urunTutari=self.urunFiyatlari.__getitem__(secim-1) * kilo
+    def urunListeleme(self):
+        print(self.urunListesi)
+    def urunSecme(self):
+
+        toplamOdeme=0
+        secim=input("Lütfen satın almak istediğiniz ürün ismini giriniz : ")
+        kilo=float(input("Lütfen seçtiğiniz üründen kaç kilo alacağınızı giriniz : "))
+
+        if self.urunListesi.__contains__(secim):
+            secilen=self.urunListesi("secim")
+
+        secilenUrun= self.urunListesi(secim.split(" - ")[1])
+        print(secilenUrun)
+        #secilenUrunTutari= int(secilenUrun[1])
+        #urunTutari= secilenUrunTutari * kilo
+        urunTutari= secilenUrun * kilo
         toplamOdeme+=urunTutari
 
         devam=int(input("Alışverişe devam etmek istiyorsanız 1'i, kasa için 2 giriniz"))
@@ -42,8 +81,10 @@ class Manav():
             self.kasa()
         return toplamOdeme
 
-manav=Manav()
-#while manav.calisma:
-manav.menu()
+    def calistir(self):
+        self.menu()
 
-global toplamOdeme
+
+manav=Manav()
+while manav.durum:
+    manav.calistir()
