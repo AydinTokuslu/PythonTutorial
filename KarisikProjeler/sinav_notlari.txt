@@ -1,0 +1,3 @@
+aydın tokuslu:95,55,48
+elif tokuslu:90,88,55
+deniz yılmaz:88,40,30
