@@ -68,7 +68,7 @@ class Okul:
                 print("Hocaya yakalandık!")
                 self.disiplin_puani -=2
             elif sayi == 2:
-                print("Ynalış alarm!")
+                print("Yanlış alarm!")
     class Ogretmen:
         def __init__(self,isim,soyisim,sifre):
             self.isim = isim

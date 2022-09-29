@@ -1,0 +1,2 @@
+aydın tokus: 8,55,66
+elif tokus: 77,88,99

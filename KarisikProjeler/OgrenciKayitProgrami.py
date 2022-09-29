@@ -16,7 +16,7 @@ def not_hesapla(satir):
         harf = "BA"
     elif ortalama >= 75:
         harf = "BB"
-    elif ortalama >= 75:
+    elif ortalama >= 65:
         harf = "CC"
     else:
         harf = "FF"
