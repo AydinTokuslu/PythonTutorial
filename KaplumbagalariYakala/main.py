@@ -7,13 +7,13 @@ pencere.screensize(600,600)
 pencere.title("Kaplumbagaları Yakala")
 pencere.bgcolor("blue")
 #pencere.bgpic('underwater.gif') #arkafona resim ekliyoruz.
-pencere.tracer(2)#pencere hareketleri çok yavaş olduğu için hızlandırıyoruz.
+pencere.tracer(2)#pencere hareketleri çok yavaş olduğu için hızlandırıyoruz. ve güncellemeyi engelliyoruz.
 
 oyuncu = turtle.Turtle()
 oyuncu.color("white")
 oyuncu.shape("triangle")
 oyuncu.shapesize(3)
-oyuncu.penup() #çizim yapmayacak, hareket edecek demek
+oyuncu.penup() #çizim yapmayacak, yazı yazmayacak sadece hareket edecek demek
 
 score = 0 #puan belirliyoruz.
 
@@ -22,7 +22,7 @@ yaziPuan.speed(0)#hızı yok
 yaziPuan.shape("square")
 yaziPuan.color("white")
 yaziPuan.penup()
-yaziPuan.hideturtle()#görünümünü, şeklini gizliyor.
+yaziPuan.hideturtle()#görünümünü/şeklini gizliyor.
 yaziPuan.goto(-200,200)#x ve y koordinatlarında konumunu belirliyoruz.
 yaziPuan.write("Puan: {}".format(score), align="center", font=("Courier", 24, "normal"))#üzerine yazı yazıyoruz. align=sağa sola kaydırma, font=yazı tipi ve büyüklüğü
 
@@ -63,7 +63,7 @@ pencere.onkey(hiziAzalt, "Down")
 
 maxHedef = 5
 hedefler = []
-for i in range(maxHedef):#hedef burda 1 tane, hedefleri çoğaltıcaz.
+for i in range(maxHedef):#hedef burda 1 tane, hedefleri çoğaltıcaz, 5 adet yapıyoruz.
     hedefler.append(turtle.Turtle())
     hedefler[i].penup()#çizim yapmayacak, hareket edecek demek
     hedefler[i].color("yellow")
