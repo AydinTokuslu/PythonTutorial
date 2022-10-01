@@ -64,10 +64,10 @@ class Manav():
         secim=input("Lütfen satın almak istediğiniz ürün ismini giriniz : ")
         kilo=float(input("Lütfen seçtiğiniz üründen kaç kilo alacağınızı giriniz : "))
 
-        if self.urunListesi in secim:
+        if secim in self.urunListesi:
             secilen=self.urunListesi("secim")
 
-        secilenUrun= self.urunListesi(secim.split(" - ")[1])
+        secilenUrun= int(self.urunListesi(secim.split(" - ")[1]))
         print(secilenUrun)
         #secilenUrunTutari= int(secilenUrun[1])
         #urunTutari= secilenUrunTutari * kilo
