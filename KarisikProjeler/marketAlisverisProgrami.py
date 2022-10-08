@@ -76,6 +76,9 @@ def urunListeleme(urun):
     for i in urun.items():
         print("""{:<10} ----   ücreti : |{:^8}| """.format(i[0], i[1]))
 
+def urunGosterme(urun):
+    print("""{:<10} ----   ücreti : |{:^8}| """.format(i[0], i[1]))
+
 def urunMiktariniGosterme(urunMiktar):
     for i in urunMiktar.items():
         print("""{:<10} ----   miktarı : |{:^8}| """.format(i[0], i[1]))
