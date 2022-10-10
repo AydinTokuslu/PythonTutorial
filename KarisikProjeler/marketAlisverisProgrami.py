@@ -81,6 +81,10 @@ def urunMiktariniGosterme(urunMiktar):
     for i in urunMiktar.items():
         print("""{:<10} ----   miktarı : |{:^8}| """.format(i[0], i[1]))
 
+def urunGostermememe(urunMiktar):
+    for i in urunMiktar.items():
+        print("""{:<10} ----   miktarı : |{:^8}| """.format(i[0], i[1]))
+
 
 def urunSatinAlma(urun, kasa):
     satinAlinacakUrun = input("Lütfen satın almak istediğiniz ürünün ismini giriniz : ")
