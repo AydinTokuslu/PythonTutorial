@@ -147,9 +147,6 @@ def sinif_listele(okul:dict):
     for i in okul:
         print("{}. sınıf".format(i))
 
-def sinif_listelelele(okul:dict):
-    for i in okul:
-        print("{}. sınıf".format(i))
 
 def sinif_ekle(okul:dict):
     print("Sadece 1., 2., 3. ve 4. sınıfları ekleyebilirsiniz.")
