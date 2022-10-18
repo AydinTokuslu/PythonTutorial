@@ -12,6 +12,7 @@ def anaFonksiyon():
 8- Dersleri Listele
 9- Not Ekle
 10- Ders notlarını göster
+11- Çıkış
 """
     print(menu)
     secim = input("Seçiminizi giriniz : ")
@@ -35,6 +36,8 @@ def anaFonksiyon():
         not_ekle(okul)
     elif secim == "10":
         not_goster(okul)
+    elif secim == "11":
+        quit()
     else:
         print("Hatalı giriş yaptınız")
 
@@ -79,22 +82,53 @@ def ders_ekle(okul:dict):
     while True:
         print("""
 1- Yeni Ders Ekle
-2- Ana Menüye dön.""")
+2- Ders Çıkar
+3- Dersleri Listele
+4- Ana Menüye dön.""")
         sec = input("seçiminizi yapınız : ")
         if sec == "1":
-            ders = input("Eklemek istediğiniz dersin adını giriniz : ")
-            okul[sinif][sube][ogrenci][ders]=0
-            print("Ekleme işlemi başarılı")
+            ders_listesi=["İngilizce","Türkçe","Matematik","Fen","Fizik","Kimya","Biyoloji","Tarih","Çince","Resim"]
+            x=0
+            for i in ders_listesi:
+                x+=1
+                print("{}. {}".format(x,i))
+
+            ders = int(input("Eklemek istediğiniz dersin sırasını giriniz : "))-1
+            okul[sinif][sube][ogrenci][ders_listesi[ders]]=0
+            print("Ders ekleme işlemi başarılı")
         elif sec == "2":
+            x = 0
+            for i in okul[sinif][sube][ogrenci]:
+                x += 1
+                print("{}. Ders : {}".format(x, i))
+            cikarilacakDers = int(input("Çıkarmak istediğiniz dersin sıra numarasını giriniz : "))
+            def cikarma(cikarilacakDers):
+
+                y = 0
+                for i in okul[sinif][sube][ogrenci]:
+                    y += 1
+                    if y == cikarilacakDers:
+                        cikacak =i
+                        return cikacak
+            okul[sinif][sube][ogrenci].pop(cikarma(cikarilacakDers))
+        elif sec == "3":
+            x=0
+            for i in okul[sinif][sube][ogrenci]:
+                x+=1
+                print("{}. Ders : {}".format(x,i))
+        elif sec == "4":
             break
 
 def ogrenci_listele(okul:dict):
-    sinif = input("Hangi sınıfın öğrencilerini görmek istiyorsunuz? : ")
-    sube = input("Hangi şubenin öğrencilerini görmek istiyorsunuz? : ")
-    t=0
-    for i in okul[sinif][sube]:
-        t+=1
-        print("{}. öğrenci :  {}".format(t,i))
+
+    for i in okul:
+        print("{}. sınıf :".format(i))
+        for t in okul[i]:
+            print("{:>10} Şubesi".format(t))
+            z=0
+            for y in okul[i][t]:
+                z+=1
+                print("{:>20}. {}".format(z,y))
 
 def ogrenci_ekle(okul:dict):
     sinif = input("Hangi sınıfa öğrenci ekleyeceksiniz? : ")
@@ -102,7 +136,10 @@ def ogrenci_ekle(okul:dict):
     while True:
         print("""
 1- Yeni Öğrenci Ekle
-2- Ana Menüye Dön
+2- Öğrenci Çıkar
+3- Öğrenci İsmi Düzenle
+4- Şubenin Öğrencilerini Listele
+5- Ana Menüye Dön
 """)
         sec = input("işleminizi seçiniz : ")
         if sec == "1":
@@ -110,6 +147,21 @@ def ogrenci_ekle(okul:dict):
             okul[sinif][sube][ogrenci] = {}
             print("Ekleme işlemi başarılı")
         elif sec == "2":
+            cikacakOgrenci = input("Çıkarmak istediğiniz öğrencinin adı : ")
+            okul[sinif][sube].pop(cikacakOgrenci)
+            print("Çıkarma işlemi başarılı")
+        elif sec == "3":
+            degisecekOgrenci= input("Düzenlemek istediğiniz öğrencinin adı : ")
+            okul[sinif][sube].pop(degisecekOgrenci)
+            isim=input("Yeni ismi giriniz")
+            okul[sinif][sube][isim]={}
+            print("Düzenleme işlemi başarılı")
+        elif sec == "4":
+            t=0
+            for i in okul[sinif][sube]:
+                t+=1
+                print("{}. {}".format(t,i))
+        elif sec == "5":
             break
 
 
@@ -118,7 +170,7 @@ def sube_listele(okul:dict):
     for i in okul:
         print("{}. Sınıf Şubeleri".format(i))
         for t in okul[i]:
-            print("{} Şubesi".format(t))
+            print("{:>20} Şubesi".format(t))
 
 
 def sube_ekle(okul:dict):
