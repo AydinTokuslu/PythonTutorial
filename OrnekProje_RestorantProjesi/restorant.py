@@ -4,12 +4,16 @@
 masalar = {}
 yemek = {}
 for i in range(1,21):
-    masalar[i]={"hesap":0}
+    masalar[i]={}
+for i in range(1,21):
+    masalar[i]["hesap"]=0
 
+def menu_goster():
+    for i in yemek.items():
+        print("Yemek İsmi : {:<10}, Ücreti : {}".format(i[0],i[1]))
 def masalari_goruntule():
     for i in range(1, 21):
-        print("{}. masa hesabı : {}".format(i, masalar[i]["hesap"]))
-
+        print("{}. Masa Hesabı : {}".format(i, masalar[i]["hesap"]))
 
 def hesap_ekle():
 
@@ -17,38 +21,38 @@ def hesap_ekle():
     while True:
         print("""
     1-Yeni sipariş gir
-    2- Ana Menüye dön""")
+    2-Masadaki Siparişleri Gör
+    3-Ana Menüye dön""")
         secim=input("seçiminiz: ")
         if secim == "1":
-            print("Yemekler:")
+            print("Yemekler:")#burda bütün menüyü kullanıcıya gösteriyoruz.
             x=0
             for i in yemek:
                 x+=1
                 print("{}. {}".format(x,i))
             urun = int(input("sipariş etmek istediğiniz ürünün sırasını giriniz : "))
             y=0
-            for i in yemek:
+            for i in yemek.items():
                 y+=1
                 if y == urun:
                     miktar=int(input("kaç adet? : "))
-                    toplam = masalar[masa_no] + float(yemek[i])*miktar
+                    toplam = masalar[masa_no] + float(yemek[i[0]])*miktar
                     masalar[masa_no]["hesap"] = toplam
-                    masalar[masa_no][i] = miktar
+                    if i[0] in masalar[masa_no].keys():
+                        masalar[masa_no][i[0]] += miktar
+                    else:
+                        masalar[masa_no][i[0]] = miktar
 
-                    dosya = open("restorant.txt", "w")
-                    dosya.write("0")
-                    for i in range(1, 21):
-                        ücret = masalar[i]["hesap"]
-                        ücret = str(ücret)
-                        urun = i
-                        dosya.write("\n" + ücret +" "+urun+" "+str(miktar))
-                    dosya.close()
                 else:
                     pass
         elif secim == "2":
+            a = 0
+            for i in masalar[masa_no].items():
+                a += 1
+                if a != 1:
+                    print("{:<3} Adet {}".format(i[1], i[0]))
+        elif secim == "3":
             break
-
-
 
 def hesap_cikar():
     masa_no = int(input("Masa numarasını giriniz : "))
@@ -57,41 +61,68 @@ def hesap_cikar():
     1-Nakit Çıkar
     2-Ürün Çıkar
     3-Hesabı Sil
-    4-Ana Menüye Dön""")
+    4-Masadaki Siparişleri Gör
+    5-Ana Menüye Dön""")
         secim=input("işlemini seçiniz : ")
         if secim == "1":
-            ucret = input("Ücreti giriniz : ")
-            toplam = masalar[masa_no] + ucret
+            ucret = float(input("Ücreti giriniz : "))
+            toplam = masalar[masa_no]["hesap"] - ucret
             if toplam >= 0:
-                masalar[masa_no] = toplam
+                masalar[masa_no]["hesap"] = toplam
             else:
                 print("Hatalı işlem yaptınız")
         elif secim == "2":
-            print("Yemekler:")
+            print("Yemekler:") #burda bütün menüyü kullanıcıya gösteriyoruz.
             x = 0
             for i in yemek:
                 x += 1
                 print("{}. {}".format(x, i))
             urun = int(input("Çıkarmak istediğiniz ürünün sırasını giriniz : "))
             y = 0
-            for i in yemek:
+            for i in yemek.items():
                 y += 1
                 if y == urun:
                     miktar = float(input("kaç adet? : "))
-                    toplam = masalar[masa_no] - float(yemek[i]) * miktar
-                    if toplam >= 0:
-                        masalar[masa_no] = toplam
+                    toplam = masalar[masa_no]["hesap"] - miktar*float(yemek[i[0]])
+                    if miktar >= int(masalar[masa_no][i[0]]):
+                        masalar[masa_no].pop(i[0])
                     else:
-                        print("Hatalı işlem yaptınız")
+                        mevcut = float(masalar[masa_no][i[0]])
+
+                        toplam = mevcut - miktar
+                        masalar[masa_no][i[0]] = toplam
+
+                    if toplam >= 0:
+                        masalar[masa_no]["hesap"] = toplam
+                    else:
+                        print("Hatalı işlem yaptınız.")
                 else:
                     pass
         elif secim == "3":
-            print("Masadaki hesap : {}".format(masalar[masa_no]))
-            masalar[masa_no] = 0
+            print("Masadaki hesap : {}".format(masalar[masa_no]["hesap"]))
+            masalar[masa_no]["hesap"] = 0
+            liste = []
+            x = 1
+            for i in masalar[masa_no].items():
+                x += 1
+                if x != 1:
+                    liste.append(i[0])
+                else:
+                    pass
+            h = 0
+            for i in liste:
+               masalar[masa_no].pop(i)
+
         elif secim == "4":
+            a = 0
+            for i in masalar[masa_no].items():
+                a += 1
+                if a != 1:
+                    print("{:<3} Adet {}".format(i[1], i[0]))
+        elif secim == "5":
             break
 
-def yemek_kontrol(yemek):
+def yemek_kontrol():
     with open("yemek.txt") as dosya:
         bilgiler = dosya.readlines()
         for satir in bilgiler:
@@ -100,35 +131,51 @@ def yemek_kontrol(yemek):
             yemekler = satir[0]
             ucretler = satir[1]
             yemek[yemekler] = ucretler
-        print(yemekler)
 
 def hesap_kontrolu(dosya_adi):
     try:
         dosya = open(dosya_adi)
-        bilgiler=dosya.read()
-        bilgiler = bilgiler.split("\n")
-        bilgiler.pop()
+        bilgiler=dosya.readlines()
+        for satir in bilgiler:
+            satir = satir.replace("\n", "")
+            satir = satir.split("$")
+            masa_hesap = satir[0]
+            masa_hesap = masa_hesap.split("-")
+            masa_no=masa_hesap[0]
+            hesap=masa_hesap[1]
+            masalar[int(masa_no)]["hesap"] = float(hesap)
+            yemekler = satir[1]
+            yemekler = yemekler.split("%")
+            try:
+                for yemek in yemekler:
+                    yemek=yemek.split(" ")
+                    masalar[int(masa_no)][yemek[0]] = int(yemek[1])
+            except:
+                pass
         dosya.close()
-        flag=True
+
     except FileNotFoundError:
         dosya = open(dosya_adi,"w")
         dosya.close()
         print("yeni dosya oluşturuldu")
-        flag=False
-    if flag:
-        for i in enumerate(bilgiler):
-            masalar[i[0]] = i[1]
-
-    else:
-        pass
 
 def guncelle():
     dosya=open("restorant.txt","w")
-    dosya.write("0")
+
     for i in range(1,21):
         ücret=masalar[i]["hesap"]
         ücret =str(ücret)
-        dosya.write("\n"+ücret)
+        dosya.write(str(i)+"-"+ücret+"$")
+        a = 0
+        for t in masalar[i].items():
+            a += 1
+            if a != 1:
+                yemek = t[0]
+                miktar = str(t[1])
+                dosya.write(yemek+" "+miktar+"%")
+            else:
+                pass
+        dosya.write("\n")
     dosya.close()
 
 def yemek_dosyasi():
@@ -147,15 +194,13 @@ def yemek_dosyasi():
             break
     dosya.close()
 
-def menu_goster():
-    for i in yemek.items():
-        print("Yemek ismi : {:<10}, Ücreti : {}".format(i[0],i[1]))
+
 
 def ana_fonksiyon():
     hesap_kontrolu("restorant.txt")
     while True:
-        yemek_kontrol(yemek)
-
+        yemek_kontrol()
+        guncelle()
         print("""
 1-Masaları Görüntüle
 2-Hesap Ekle
