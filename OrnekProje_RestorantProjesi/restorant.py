@@ -140,12 +140,12 @@ def hesap_kontrolu(dosya_adi):
             satir = satir.replace("\n", "")
             satir = satir.split("$")
             masa_hesap = satir[0]
-            masa_hesap = masa_hesap.split("-")
+            masa_hesap = masa_hesap.split(" ")
             masa_no=masa_hesap[0]
             hesap=masa_hesap[1]
             masalar[int(masa_no)]["hesap"] = float(hesap)
             yemekler = satir[1]
-            yemekler = yemekler.split("%")
+            yemekler = yemekler.split("$")
             try:
                 for yemek in yemekler:
                     yemek=yemek.split(" ")

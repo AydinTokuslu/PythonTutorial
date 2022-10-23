@@ -1,0 +1,7 @@
+doner 15
+patates 10
+tost 10
+cay 5
+kahve 0
+patlican 12
+sosisli 10
