@@ -1,0 +1,7 @@
+Doner 150
+Kebap 200
+Lahmacun 50
+Patlican 125
+Mantı 100
+Çay 20
+Kahve 40
