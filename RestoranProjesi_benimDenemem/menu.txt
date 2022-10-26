@@ -5,3 +5,4 @@ Patlican 125
 Mantı 100
 Çay 20
 Kahve 40
+dolma 100

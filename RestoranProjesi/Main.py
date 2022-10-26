@@ -27,7 +27,7 @@ def hesapEkle():
 3-Ana menüye dön""")
         secim=input("seçiminizi giriniz : ")
         if secim == "1":
-            print("Yemekler : ")
+            print("Yemekler : ") #yemekleri listeliyoruz
             x=0
             for i in yemek:
                 x+=1
