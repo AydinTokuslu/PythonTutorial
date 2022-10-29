@@ -103,7 +103,6 @@ def ders_ekle(okul:dict):
                 print("{}. Ders : {}".format(x, i))
             cikarilacakDers = int(input("Çıkarmak istediğiniz dersin sıra numarasını giriniz : "))
             def cikarma(cikarilacakDers):
-
                 y = 0
                 for i in okul[sinif][sube][ogrenci]:
                     y += 1
