@@ -46,8 +46,8 @@ def ornek_ekle():
 """)
             secim=input("seçiminizi giriniz : ")
             if secim == "1":
-                cumle = input("örnek cümle giriniz : ")
-                anlam=input("yazdığınız örnek cümlenin anlamını giriniz : ")
+                cumle = input("örnek ingilizce cümle giriniz : ")
+                anlam=input("yazdığınız örnek ingilizce cümlenin türkçe anlamını giriniz : ")
                 sozluk[kelime]["ornek"][cumle]=anlam
             elif secim == "2":
                cumle_goster(kelime)
@@ -116,14 +116,83 @@ def cumle_goster(kelime):
                     {}.
                     İngilizcesi : {}
                     Türkçesi : {} """.format(x, i[0], i[1]))
+
+
+def dosya_yaz():
+    with open("ingilizce.txt","a", encoding="utf-8") as dosya:
+        for kelime in sozluk.keys():
+            dosya.write(kelime + "$")
+            for anlam in sozluk[kelime]["anlam"].items():
+                dosya.write(str(anlam[0]) + " = " + anlam[1] + "-")
+            dosya.write("%")  # anlam ve örnek kısmını ½ ile ayırıyouz.
+            for cumle in sozluk[kelime]["ornek"].items():
+                dosya.write(cumle[0] + "@" + cumle[1] + "/")  # @ inglizce ve türkçe cümleyi ayırır.
+            dosya.write("\n")  # sonraki her kelime grubu için ayırım işareti /
+    dosya.close()
+
+def dosya_oku():
+    with open("ingilizce.txt", "r", encoding="utf-8") as dosya:
+        bilgiler=dosya.readlines()
+        for satir in bilgiler:
+            satir = satir.replace("\n","")
+            satir = satir.split("$")
+            kelime = satir[0]
+            sozluk[kelime] = {"anlam": {},
+                              "ornek": {}}
+            anlam_cumle = satir[1]
+            anlam_cumle = anlam_cumle.split("%")
+            anlam = anlam_cumle[0]
+            anlam = anlam.split("-")
+            try:
+                for a in anlam:
+                    anlam = a.split("=")
+                    sozluk[kelime]["anlam"][int(anlam[0])] = anlam[1]
+            except:
+                pass
+            cumle= anlam_cumle[1]
+            cumle = cumle.split("/")
+            try:
+                for a in cumle:
+                    cumle = a.split("@")
+                    sozluk[kelime]["ornek"][cumle[0]] = cumle[1]
+            except:
+                pass
+    dosya.close()
+
+
+
+def kelime_listele():
+    print("Mevcut Kelimeler: ")
+    x = 0
+    for i in sozluk.keys():
+        x += 1
+        print("{}. {}".format(x, i))
+
+
+def kelime_sil():
+    kelime_listele()
+    sira=int(input("Silmek istediğiniz kelimenin sırasını yazınız : "))
+    liste=[]
+    y = 0
+    for a in sozluk.keys():
+        y += 1
+        if y == sira:
+            liste.append(a)
+    sozluk.pop(liste[0])
+
+
 def ana_fonksiyon():
+    #dosya_oku()
     while True:
+        dosya_yaz()
         print("""
     1-Kelime Bul
     2-Yeni Kelime Ekle
     3-Kelimeye Anlam Ekle
     4-Kelimeye Cümle Örneği Ekle
-    5-Çıkış
+    5-Kelimeleri Listele
+    6-Kelime Sil
+    7-Çıkış
     """)
         secim=input("işleminizi seçiniz : ")
         if secim == "1":
@@ -135,6 +204,10 @@ def ana_fonksiyon():
         elif secim == "4":
             ornek_ekle()
         elif secim == "5":
+            kelime_listele()
+        elif secim == "6":
+            kelime_sil()
+        elif secim == "7":
             print("yine bekleriz")
             quit()
         else:

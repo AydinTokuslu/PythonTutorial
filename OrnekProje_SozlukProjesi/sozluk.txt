@@ -1,0 +1,2 @@
+book$1=kitap-2=yer ayırtmak-3=defter-%this is my book@bu benim kitabımdır/this book is fantastic@u kitap çok fantastiktir./
+visit$1=ziyaret-2=vizite-3=ziyaret etmek-%thank you for your visit@ziyaretiniz için teşekkür ederim/you can visit me any time@her zaman beni ziyaret edebilirsin/
