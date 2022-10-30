@@ -114,7 +114,7 @@ def ders_ekle(okul):
         if sec == "1":
             ders_listesi=["İngilizce","Türkçe","Matematik","Fen","Fizik","Kimya","Biyoloji","Tarih","Çince","Resim"]
             a=0
-            for i in ders_listesi:
+            for i in ders_listesi:  # ders listesini seçmk için listeler
                 a+=1
                 print("{} - {}".format(a,i))
 
@@ -174,6 +174,7 @@ def not_ekle(okul):
             ders=input("dersin adını giriniz : ")
             ders_notu=int(input("dersin notunu giriniz : "))
             okul[sinif][sube][ogrenci][ders] += ders_notu
+
         elif sec == "2":
             break
         else:

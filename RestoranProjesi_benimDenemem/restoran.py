@@ -46,14 +46,10 @@ def menu():
 
 
 
-def siparis():
+def siparis(masalar):
     masalariGoruntule()
-    masa_no=int(input("Masa numaranızı giriniz : "))
-    if masa_no in masalar.keys():
-        masalar[masa_no] = {"hesap": 0,
-                          "siparis": 0}
-    else:
-        print("bu masa numarası restoranda bulunmamaktadır. Yeni bir masa numarası giriniz")
+    masa_no=input("Masa numaranızı giriniz : ")
+    masalar[masa_no] = {}
     while True:
         print("""
     1-Yeni sipariş gir
@@ -61,17 +57,21 @@ def siparis():
     3-Ana menüye dön""")
         secim = input("seçiminizi giriniz : ")
         if secim == "1":
-            menu()
-            siparis=int(input("sipariş etmek istediğiniz yemeğin numarasını giriniz : "))
-            y=0
-            for i in yemek.items():
-                y+=1
-                if y==siparis:
-                    siparisAdet=int(input("kaç adet sipariş vermek istiyorsunuz? : "))
-                    masalar[masa_no]["siparis"]=siparisAdet
+            menü_listesi = []
+            for i in yemek.keys():
+                menü_listesi.append(i)
+            print(menü_listesi)
+
+            siparis=input("sipariş etmek istediğiniz yemeğin ismini giriniz : ")
+            masalar[masa_no][menü_listesi[siparis]] = {}
+
 
         elif secim == "2":
-            siparis_goster(masa_no)
+            t = 0
+            for i in masalar[masa_no][siparis]:
+                t += 1
+                print("{}. {} ".format(t, i))
+            #siparis_goster(masa_no)
             #a=0
             #for i in masalar[masa_no].items():
                 #a += 1
@@ -92,7 +92,7 @@ def hesap_goster(masa_no):
     for i in masalar[masa_no]["hesap"].items():
         print("{}. {}".format(i[0], i[1]))
 def siparis_goster(masa_no):
-    for i in masalar[masa_no]["siparis"].items():
+    for i in masalar[masa_no][siparis].items():
         print("{}. {}".format(i[0], i[1]))
 def hesapOdeme():
     pass
@@ -103,10 +103,8 @@ for i in range(1,11):
 
 def masalariGoruntule():
     print("Restoranttaki mevcut masalar : ")
-    a = 0
-    for i in masalar.items():
-        a += 1
-        print("{}. Masa = Hesap : {:<10}, Sipariş : {}".format(a, i[0], i[1]))
+    for i in masalar:
+        print("{}. Masa".format(i))
 
 
 
@@ -129,7 +127,7 @@ def main():
         if secim == "1":
             menuGoster()
         elif secim == "2":
-            siparis()
+            siparis(masalar)
         elif secim == "4":
             siparisIptalEtme()
         elif secim == "5":

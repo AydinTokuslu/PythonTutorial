@@ -9,3 +9,4 @@ Dolma 100
 Tavuk 140
 Kizartma 95
 Kofte 160
+Kisir 70
