@@ -60,10 +60,6 @@ def siparis_goruntule():
     for i in masalar[masa_no].items():
         print("{} Nolu Masanın Siparişi : {}, Adedi : {}".format(masa_no,i[0], i[1]))
 
-def siparis_goruntulememe():
-    masa_no = input("lütfen masa numaranızı giriniz : ")
-    for i in masalar[masa_no].items():
-        print("{} Nolu Masanın Siparişi : {}, Adedi : {}".format(masa_no,i[0], i[1]))
 
 def siparis_listele():
     masa_no = input("lütfen masa numaranızı giriniz : ")
