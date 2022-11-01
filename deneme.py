@@ -36,3 +36,11 @@ escapes = ["\n\t", ("\t", "\t\t"), ["\n", "\n\t\t"]]
 sentence = "I am 40 years old. {}I have two children. {}Data Science is my IT domain.".format(escapes[0],escapes[2][1])
 
 print(sentence)
+#print(123_456_789+987_654_321)
+two_digit_number = input("Type a two digit number: ")
+
+first_digit=int(two_digit_number[0])
+second_digit=int(two_digit_number[1])
+print(first_digit)
+print(second_digit)
+print("total : "+ str(first_digit + second_digit ) )
