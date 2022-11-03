@@ -44,3 +44,11 @@ second_digit=int(two_digit_number[1])
 print(first_digit)
 print(second_digit)
 print("total : "+ str(first_digit + second_digit ) )
+
+two_digit_number1 = input("Type a two digit number: ")
+
+first_digit1=int(two_digit_number1[0])
+second_digit1=int(two_digit_number1[1])
+print(first_digit1)
+print(second_digit1)
+print("total : "+ str(first_digit1 + second_digit1 ) )
