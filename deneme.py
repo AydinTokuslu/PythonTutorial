@@ -13,7 +13,7 @@
 grocer = ["banana", ["orange", ["apple", "eggplant", "melon", "spinach", "cheese", "leek" ], "water"], "mandarin"]
 #print(grocer[2][2:5:2])
 #print(grocer)
-print(grocer[1][1][1:6:2])
+#print(grocer[1][1][1:6:2])
 grocer2=[]
 for i in grocer:
     for y in i:
@@ -37,13 +37,22 @@ sentence = "I am 40 years old. {}I have two children. {}Data Science is my IT do
 
 #print(sentence)
 #print(123_456_789+987_654_321)
-two_digit_number = input("Type a two digit number: ")
+#two_digit_number = input("Type a two digit number: ")
 
-first_digit=int(two_digit_number[0])
-second_digit=int(two_digit_number[1])
+#first_digit=int(two_digit_number[0])
+#second_digit=int(two_digit_number[1])
 #print(first_digit)
 #print(second_digit)
 #print("total : "+ str(first_digit + second_digit ) )
 
 
-for i in {'n1' : 'one', 'n2' : 'two'} : print(i)
+#for i in {'n1' : 'one', 'n2' : 'two'} : print(i)
+
+#n=int(input("enter a number between 1-10 : "))
+#for i in range(11):
+ #   print("{} x {} = ".format(n,i), n*i)
+    #print("{} x {} = ".format(n,i), n%i)
+
+print(range(5))
+print(*range(5))
+print(*("seperate"))
