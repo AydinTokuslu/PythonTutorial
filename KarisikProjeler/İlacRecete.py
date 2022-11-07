@@ -25,22 +25,22 @@ hastalikList=["Allerji","Basagrisi","Diyabet","Sogukalginligi","Migren","Kalp Ha
 
 
 def recete_kontrol():
-    recete_no = int(input("Lütfen reçete numaranızı giriniz (1-8) : "))
-    if recete_no in recete_list:
-        for i in recete_list:
-            if recete_no == i:
-                print("İstediğiniz ilaç mevcuttur. Reçete ekranına yönlendiriliyorsunuz...")
-                print(f"Reçeteniz : {recete_list[recete_no]}")
-
-    else:
-        secim = input("İstediğiniz ilaç maalesef mevcut değildir. Tekrar giriş yapmak için 1'i, çıkış için 2'yi tuşlayınız.")
-        if secim == "1":
-            hasta_girisi()
-        elif secim == "2":
-            quit()
+    recete_k = True
+    while recete_k:
+        recete_no = int(input("Lütfen reçete numaranızı giriniz (1-8) : "))
+        if recete_no in recete_list:
+            print("İstediğiniz ilaç mevcuttur. Reçete ekranına yönlendiriliyorsunuz...")
+            print(f"Reçeteniz : {recete_list[recete_no]}")
+            recete_k = False
         else:
-            print("Yanlış seçim yaptınız. çıkışa yönlendiriiyorsunuz. ")
-            quit()
+            secim = input("İstediğiniz ilaç maalesef mevcut değildir. Tekrar giriş yapmak için 1'i, çıkış için 2'yi tuşlayınız.")
+            if secim == "1":
+                hasta_girisi()
+            elif secim == "2":
+                quit()
+            else:
+                print("Yanlış seçim yaptınız. çıkışa yönlendiriiyorsunuz. ")
+                quit()
 
 
 def hasta_kayit():
