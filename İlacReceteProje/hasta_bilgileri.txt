@@ -1,0 +1,16 @@
+Aydın/Tokuşlu/Migren
+Elif/Tokuşlu/Diyabet
+Sare/Tokuşlu/Allerji
+Cemil/Topuz/Migren
+Hüseyin/Kaya/Genel Cerrahi
+Cem/Kıllı/Migren
+Enis/Tokuşlu/Allerji
+Hüt/Kuş/Migren
+Can/Kuş/Migren
+Yusuf/Gunduz/Sogukalginligi
+Hamdi/Pala/Kalp Hastaliklari
+Cem/Kaygılı/Cocuk Hastaliklari
+Galip/Öztürk/Migren
+Hilal/Eser/Genel Cerrahi
+Nuray/Eser/Diyabet
+Hilal/Sonmez/Migren
