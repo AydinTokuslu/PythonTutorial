@@ -24,8 +24,8 @@ while True:
         kelime.anlamlari.append(anlam)
     elif secim == "3":
         kelime = input("Cümle eklemek istediğiniz kelimeyi giriniz : ")
-        ingilizce_cumle = input("İngilizce cümle giriniz : ")
-        turkce_cumle = input("İngilizce cümle giriniz : ")
+        ingilizce_cumle = input("İngilizce cümleyi giriniz : ")
+        turkce_cumle = input("Türkçe cümleyi giriniz : ")
         kelime = Kelimeler()
         kelime.cumleler[ingilizce_cumle] = turkce_cumle
     elif secim == "4":
@@ -46,3 +46,7 @@ Anlamları : """.format(kelime))
 {}.
 - {}
 - {}""".format(y, i[0], i[1]))
+    elif secim == "5":
+        quit()
+    else:
+        print("hatalı giriş")
