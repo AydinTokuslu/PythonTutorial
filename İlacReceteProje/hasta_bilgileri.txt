@@ -14,3 +14,7 @@ Galip/Öztürk/Migren
 Hilal/Eser/Genel Cerrahi
 Nuray/Eser/Diyabet
 Hilal/Sonmez/Migren
+Aslı/Bircan/Kalp Hastaliklari
+Cemil/Sonsay/Migren
+Ceml/Songun/Migren
+Nilgün/Korkmaz/Migren

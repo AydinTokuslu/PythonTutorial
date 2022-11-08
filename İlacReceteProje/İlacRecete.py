@@ -113,9 +113,7 @@ def ilacYazim():
             print("Hastalığınız sistemde tespit edilemedi. Farklı bir birime yönlendiriliyorsunuz. ")
 
 
-hasta_adi = ""
-hasta_soyadi = ""
-hasta_sikayet = ""
+
 def hasta_girisi():
     dosya = open("hasta_bilgileri.txt", "a", encoding="utf-8")
     hastalıkListesi()
@@ -127,6 +125,9 @@ def hasta_girisi():
     main()
     dosya.close()
 
+#global hasta_adi
+#global hasta_soyadi
+#global hasta_sikayet
 
 
 
