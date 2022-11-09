@@ -20,3 +20,10 @@ Ceml/Songun/Migren
 Nilgün/Korkmaz/Migren
 Hasan/Kaya/Migren
 Can/Yılmaz/Migren
+//
+//
+Sare/Tokuşlu/Allerji
+Bülent/Ceylan/Migren
+Neslihan/Gürpınar/Migren
+Sermin/Kaya/Migren
+Sermin/Kaya/Migren
