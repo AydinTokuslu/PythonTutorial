@@ -7,7 +7,7 @@ import time
 #4- reçeteleri ana listin içine atalım
 
 class Eczane():
-    def __init__(self):
+    def __init__(self,hasta_adi,hasta_soyadi,hasta_sikayet):
         self.hasta_adi = ""
         self.hasta_soyadi = ""
         self.hasta_sikayet = ""
@@ -159,7 +159,7 @@ def hasta_girisi():
     return hasta.get_hastaAdi(), hasta.get_hastaSoyadi(), hasta.get_hastaSikayet()
 
 
-def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
+def randevu_alma():
     hasta = Eczane()
     print("Görevli Doktor Listesi : ")
     print("S.No : Doktor İsmi :         Branşı : ")
@@ -172,7 +172,7 @@ def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
     if doktor in doktor_listesi.keys():
         muayene_gun = input("Lütfen muayene olmak istediğiniz günü giriniz : ")
         muayene_saati = input("Lütfen muayene olmak istediğiniz saati giriniz : ")
-        print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
+        print(f"Sayın {hasta.get_hastaAdi()} {hasta.get_hastaSoyadi()}, {hasta.get_hastaSikayet()} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
     else:
         print("Yanlış doktor ismi girdiniz. Tekrar deneyiniz.")
 
