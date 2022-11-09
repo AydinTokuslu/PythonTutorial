@@ -112,9 +112,14 @@ def ilacYazim():
         else:
             print("Hastalığınız sistemde tespit edilemedi. Farklı bir birime yönlendiriliyorsunuz. ")
 
+#global hasta_adi
+#global hasta_soyadi
+#global hasta_sikayet
+hasta_adi = ""
+hasta_soyadi = ""
+hasta_sikayet = ""
 
-
-def hasta_girisi():
+def hasta_girisi(hasta_adi, hasta_soyadi, hasta_sikayet):
     dosya = open("hasta_bilgileri.txt", "a", encoding="utf-8")
     hastalıkListesi()
     hasta_adi = input("Lütfen hasta adını giriniz : ")
@@ -124,11 +129,7 @@ def hasta_girisi():
     dosya.write(hasta_adi+"/"+hasta_soyadi+"/"+hasta_sikayet+"\n")
     main()
     dosya.close()
-
-#global hasta_adi
-#global hasta_soyadi
-#global hasta_sikayet
-
+    return hasta_adi, hasta_soyadi, hasta_sikayet
 
 
 def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
@@ -143,7 +144,7 @@ def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
     if doktor in doktor_listesi.keys():
         muayene_gun = input("Lütfen muayene olmak istediğiniz günü giriniz")
         muayene_saati = input("Lütfen muayene olmak istediğiniz saati giriniz")
-        print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'dee yapılacaktır.")
+        print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
     else:
         print("Yanlış doktor ismi girdiniz. Tekrar deneyiniz.")
 
@@ -200,5 +201,5 @@ def main():
         else:
             print("Yanlış tercihte bulundunuz. Tekrar deneyiniz.")
 
-hasta_girisi()
+hasta_girisi(hasta_adi, hasta_soyadi, hasta_sikayet)
 

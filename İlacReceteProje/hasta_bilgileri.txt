@@ -18,3 +18,5 @@ Aslı/Bircan/Kalp Hastaliklari
 Cemil/Sonsay/Migren
 Ceml/Songun/Migren
 Nilgün/Korkmaz/Migren
+Hasan/Kaya/Migren
+Can/Yılmaz/Migren
