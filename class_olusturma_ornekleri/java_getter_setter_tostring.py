@@ -108,3 +108,7 @@
 #
 #
 # }
+
+input_x = "Clarusway"
+for i in input_x:
+    print(i, end="-")
