@@ -10,7 +10,7 @@ class Eczane():
     def __init__(self,hasta_adi,hasta_soyadi,hasta_sikayet):
         self.hasta_adi = hasta_adi
         self.hasta_soyadi = hasta_soyadi
-        self.hasta_sikayet = ""
+        self.hasta_sikayet = hasta_sikayet
     def get_hastaAdi(self):
         return self.hasta_adi
     def get_hastaSoyadi(self):
@@ -106,7 +106,7 @@ def recete_kontrol(ilac_odeme):
 
 
 def hasta_kayit():
-    hasta = Eczane()
+    #hasta = Eczane()
     print("Giriş yapılan hasta kayıtlı değildir. Yeni kayıt yapılacaktır.")
     hasta_adi = input("lütfen hasta adı giriniz : ")
     hasta_list.append(hasta.hasta_adi)
@@ -136,31 +136,33 @@ def ilacYazim():
 #global hasta_adi
 #global hasta_soyadi
 #global hasta_sikayet
-# hasta_adi = ""
-# hasta_soyadi = ""
-# hasta_sikayet = ""
+hasta_adi = ""
+hasta_soyadi = ""
+hasta_sikayet = ""
 
 
 
 def hasta_girisi():
-    hasta = Eczane(hasta_adi,hasta_soyadi,hasta_sikayet)
+    #hasta = Eczane()
     dosya = open("hasta_bilgileri.txt", "a", encoding="utf-8")
     hastalıkListesi()
-    #hasta_adi = hasta.set_hastaAdi(input("Lütfen hasta adını giriniz : "))
-    hasta.set_hastaAdi(input("Lütfen hasta adını giriniz : "))
-    #hasta_soyadi = hasta.set_hastaSoyadi(input("Lütfen hasta soyadını giriniz : "))
-    hasta.set_hastaSoyadi(input("Lütfen hasta soyadını giriniz : "))
-    #hasta_sikayet = hasta.set_hastaSikayet(input("Lütfen yukarıdaki listeden hasta şikayetini giriniz : "))
-    hasta.set_hastaSikayet(input("Lütfen yukarıdaki listeden hasta şikayetini giriniz : "))
+    hasta_adi = input("Lütfen hasta adını giriniz : ")
+    #hasta.set_hastaAdi(input("Lütfen hasta adını giriniz : "))
+    hasta_soyadi = input("Lütfen hasta soyadını giriniz : ")
+    #hasta.set_hastaSoyadi(input("Lütfen hasta soyadını giriniz : "))
+    hasta_sikayet = input("Lütfen yukarıdaki listeden hasta şikayetini giriniz : ")
+    #hasta.set_hastaSikayet(input("Lütfen yukarıdaki listeden hasta şikayetini giriniz : "))
     print("Kaydınız tamamlanmıştır. Ana menüye yönlendiriliyorsunuz...")
-    dosya.write(hasta.hasta_adi+"/"+hasta.hasta_soyadi+"/"+hasta.hasta_sikayet+"\n")
+    #dosya.write(hasta.hasta_adi+"/"+hasta.hasta_soyadi+"/"+hasta.hasta_sikayet+"\n")
+    dosya.write(hasta_adi+"/"+hasta_soyadi+"/"+hasta_sikayet+"\n")
     main()
     dosya.close()
-    return hasta.set_hastaAdi(), hasta.set_hastaSoyadi(), hasta.set_hastaSikayet()
+    #return hasta.set_hastaAdi(), hasta.set_hastaSoyadi(), hasta.set_hastaSikayet()
+    return hasta_adi, hasta_soyadi, hasta_sikayet
 
 
-def randevu_alma():
-    hasta = Eczane()
+def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
+    #hasta = Eczane()
     print("Görevli Doktor Listesi : ")
     print("S.No : Doktor İsmi :         Branşı : ")
     print("-------------------------------------")
@@ -172,7 +174,8 @@ def randevu_alma():
     if doktor in doktor_listesi.keys():
         muayene_gun = input("Lütfen muayene olmak istediğiniz günü giriniz : ")
         muayene_saati = input("Lütfen muayene olmak istediğiniz saati giriniz : ")
-        print(f"Sayın {hasta.get_hastaAdi()} {hasta.get_hastaSoyadi()}, {hasta.get_hastaSikayet()} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
+        #print(f"Sayın {hasta.get_hastaAdi()} {hasta.get_hastaSoyadi()}, {hasta.get_hastaSikayet()} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
+        print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
     else:
         print("Yanlış doktor ismi girdiniz. Tekrar deneyiniz.")
 
@@ -221,7 +224,7 @@ def main():
         elif secim == "2":
             recete_kontrol(ilac_odeme)
         elif secim == "3":
-            randevu_alma()
+            randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet)
         elif secim == "4":
             odeme(ilac_odeme)
         elif secim == "5":
