@@ -8,8 +8,8 @@ import time
 
 class Eczane():
     def __init__(self,hasta_adi,hasta_soyadi,hasta_sikayet):
-        self.hasta_adi = ""
-        self.hasta_soyadi = ""
+        self.hasta_adi = hasta_adi
+        self.hasta_soyadi = hasta_soyadi
         self.hasta_sikayet = ""
     def get_hastaAdi(self):
         return self.hasta_adi
@@ -143,7 +143,7 @@ def ilacYazim():
 
 
 def hasta_girisi():
-    hasta = Eczane()
+    hasta = Eczane(hasta_adi,hasta_soyadi,hasta_sikayet)
     dosya = open("hasta_bilgileri.txt", "a", encoding="utf-8")
     hastalıkListesi()
     #hasta_adi = hasta.set_hastaAdi(input("Lütfen hasta adını giriniz : "))
@@ -156,7 +156,7 @@ def hasta_girisi():
     dosya.write(hasta.hasta_adi+"/"+hasta.hasta_soyadi+"/"+hasta.hasta_sikayet+"\n")
     main()
     dosya.close()
-    return hasta.get_hastaAdi(), hasta.get_hastaSoyadi(), hasta.get_hastaSikayet()
+    return hasta.set_hastaAdi(), hasta.set_hastaSoyadi(), hasta.set_hastaSikayet()
 
 
 def randevu_alma():

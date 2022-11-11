@@ -110,5 +110,9 @@
 # }
 
 input_x = "Clarusway"
+count = 0
 for i in input_x:
-    print(i, end="-")
+    count += 1
+    if count < len(input_x):
+        i = i + "-"
+    print(i, end="")
