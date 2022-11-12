@@ -12,10 +12,3 @@ import os
 #os.rmdir("DenemePython") # tek klasörü siler
 #os.removedirs("Deneme1/Deneme2/Deneme3")  # birden fazla klasörü siler
 
-listOne = ['a', 'b', 'c', 'd']
-listTwo = ['e', 'f', 'g']
-# newList = listOne + listTwo
-# print(newList)
-newList = []
-newList = listOne.extend(listTwo)
-print(newList)

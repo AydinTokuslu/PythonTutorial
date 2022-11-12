@@ -1,0 +1,21 @@
+Darcey                   Parker                   Fizik                    58.0                     Kaldı
+Amara Allen              Eloise                   Kimya Müh                69.4                     Kaldı
+Brynn                    Thomas                   Kimya Müh                75.2                     Kaldı
+James                    Harper                   Bilgisayar Müh           75.8                     Kaldı
+John                     Hunter                   Fizik                    61.2                     Kaldı
+William                  Hussain                  Fizik Müh                69.0                     Kaldı
+Richard                  Jeff                     Matematik                61.2                     Kaldı
+Charles Booth            Hamish                   Bilgisayar Müh           62.4                     Kaldı
+Daniel                   Porter                   Fizik Müh                68.0                     Kaldı
+Martin                   Hank                     Bilgisayar Müh           79.3                     Kaldı
+Kenneth                  Rogers                   Fizik                    59.7                     Kaldı
+Tim                      Jack                     Matematik Müh            72.1                     Kaldı
+Edward Frankie           Adams                    Fizik                    86.8                     Kaldı
+Ronald                   Tate                     Bilgisayar Müh           68.8                     Kaldı
+Anthony                  Casper                   Fizik Müh                64.8                     Kaldı
+Jo                       Khan                     Matematik Müh            47.8                     Kaldı
+Bev                      Cunningham               Kimya Müh                67.8                     Kaldı
+Amalia                   Atkinson                 Fizik Müh                70.8                     Kaldı
+Marley Sienna            Robertson                Bilgisayar Müh           87.3                     Kaldı
+Jemima                   Fox                      Matematik Müh            58.3                     Kaldı
+Taylor                   Evans                    Kimya Müh                72.9                     Kaldı
