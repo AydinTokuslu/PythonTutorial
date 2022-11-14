@@ -208,9 +208,26 @@ def odeme(ilac_odeme):
 def hasta_bilgilerini_goruntuleme():
     with open("hasta_bilgileri.txt", encoding="utf-8") as dosya:
         bilgiler = dosya.readlines()
-        bilgiler = bilgiler.replace("\n","")
         for bilgi in bilgiler:
-            print(bilgi)
+            bilgi = bilgi.replace("\n", "")
+            bilgi = bilgi.split("/")
+            ad = bilgi[0]
+            soyad = bilgi[1]
+            bolum = bilgi[2]
+            # print(ad)
+            # print(soyad)
+            # print(bolum)
+            dosya_m = open("Migren_hastalari.txt", "a", encoding="utf-8")
+            if bolum == "Migren":
+                #dosya_m.write(ad+ "-"+soyad+"-"+bolum+"\n")
+                dosya_m.write(ad)
+                dosya_m.write(" " * (25 -len(ad)))
+                dosya_m.write(soyad)
+                dosya_m.write(" " * (25 - len(soyad)))
+                dosya_m.write(bolum)
+                dosya_m.write(" " * (25 - len(bolum)))
+                dosya_m.write("\n")
+    dosya.close()
 
 
 
@@ -236,5 +253,5 @@ def main():
         else:
             print("Yanlış tercihte bulundunuz. Tekrar deneyiniz.")
 hasta_bilgilerini_goruntuleme()
-hasta_girisi()
+#hasta_girisi()
 
