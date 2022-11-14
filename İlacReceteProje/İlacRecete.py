@@ -147,6 +147,9 @@ def hasta_girisi():
     #hasta = Eczane()
     dosya = open("hasta_bilgileri.txt", "a", encoding="utf-8")
     hastalıkListesi()
+    global hasta_adi
+    global hasta_soyadi
+    global hasta_sikayet
     hasta_adi = input("Lütfen hasta adını giriniz : ")
     #hasta.set_hastaAdi(input("Lütfen hasta adını giriniz : "))
     hasta_soyadi = input("Lütfen hasta soyadını giriniz : ")
@@ -176,9 +179,6 @@ def randevu_alma():
         muayene_gun = input("Lütfen muayene olmak istediğiniz günü giriniz : ")
         muayene_saati = input("Lütfen muayene olmak istediğiniz saati giriniz : ")
         #print(f"Sayın {hasta.get_hastaAdi()} {hasta.get_hastaSoyadi()}, {hasta.get_hastaSikayet()} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
-        global hasta_adi
-        global hasta_soyadi
-        global hasta_sikayet
         print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
     else:
         print("Yanlış doktor ismi girdiniz. Tekrar deneyiniz.")

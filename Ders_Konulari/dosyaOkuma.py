@@ -1,4 +1,4 @@
-dosya = open("yazi.txt","r")
+dosya = open("yazi.txt", "r")
 
 yazi=dosya.read()
 print(yazi)

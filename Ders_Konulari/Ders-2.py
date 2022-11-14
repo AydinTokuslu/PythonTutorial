@@ -1,4 +1,4 @@
-dosya=open("metinbelgesi.txt","w")
+dosya=open("metinbelgesi.txt", "w")
 
 print("mert mekatronik",file=dosya)
 

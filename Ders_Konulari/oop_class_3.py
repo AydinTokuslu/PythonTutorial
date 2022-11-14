@@ -14,7 +14,7 @@ class kisi:
     def kisi_sayisini_soyle(cls):  #cls, bunun class üzerinden kullanılacağını gösterir.
         return cls.kisi_sayisi
 
-    @classmethod
+    @classmethod  # yapıcı method yada constructor'da deniliyor
     def string_ile_olustur(cls, str_):
         isim, yas = str_.split("-")
         return cls(isim, yas)
@@ -22,6 +22,10 @@ class kisi:
     @classmethod
     def dogum_yili_ile_olustur(cls, isim, dogum_yili):  # nesne ismi ile değil, class ismi ile çağrılır.
         return cls(isim, date.today().year - dogum_yili)  # burda cls, class (kisi) oluyor.
+
+    @staticmethod  # staticmethod () içine birşey almak zorunda değil.
+    def dogum_yili_hesapla(kisi):
+        return date.today().year - kisi.yas
 
 
 
@@ -37,3 +41,4 @@ kisi3 = kisi.string_ile_olustur("Ayse-25") # nesne ismi ile değil, class ismi i
 kisi4 = kisi.dogum_yili_ile_olustur("Elif", 1986) # nesne ismi ile değil, class ismi ile çağrılır.
 print(kisi.kisi_sayisini_soyle())  # 4
 print(kisi4.isim, kisi4.yas)  # Elif 36
+print(kisi.dogum_yili_hesapla(kisi1))

@@ -8,11 +8,11 @@ veriler["kullanicilar"].append({"kadi":"karabela42","sifre":"123456mm","mail":"k
 
 print(veriler)
 
-with open("veriler.json","w") as dosya:
+with open("veriler.json", "w") as dosya:
     json.dump(veriler,dosya)
 
 
-with open("veriler.json","r") as dosya:
+with open("veriler.json", "r") as dosya:
     veriler=json.load(dosya)
     for kullanici in veriler["kullanicilar"]:
         if kullanici["kadi"] == "Mckarakule":

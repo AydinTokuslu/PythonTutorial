@@ -1,4 +1,4 @@
-dosya=open("planlar.txt","r",encoding="utf-8")
+dosya=open("planlar.txt", "r", encoding="utf-8")
 
 print(dosya.read(14))
 print(dosya.readline())

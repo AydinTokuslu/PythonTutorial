@@ -38,10 +38,10 @@ class Sistem:
 
     def verileriAl(self):
         try:
-            with open("kullanicilar.json","r") as dosya:
+            with open("kullanicilar.json", "r") as dosya:
                 veriler=json.load(dosya)
         except FileNotFoundError:
-            with open("kullanicilar.json","w") as dosya:
+            with open("kullanicilar.json", "w") as dosya:
                 dosya.write("{}")
 
             with open("kullanicilar.json", "r") as dosya:

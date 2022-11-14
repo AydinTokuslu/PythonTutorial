@@ -1,4 +1,4 @@
-dosya = open("yazi.txt","w")
+dosya = open("yazi.txt", "w")
 yazilacaklar="merhaba arkadaslar"
 dosya.write(yazilacaklar)
 
