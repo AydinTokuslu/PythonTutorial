@@ -33,3 +33,5 @@ Hüseyin/Işık/Genel Cerrahi
 Hüseyin/Yolaçan/Migren
 Cemil/Solmaz/Migren
 Fatma/Ay/Cuma
+Sany/James/Migren
+Tony/Robins/Diyabet

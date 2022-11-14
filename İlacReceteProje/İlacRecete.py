@@ -134,14 +134,9 @@ def ilacYazim():
         else:
             print("Hastalığınız sistemde tespit edilemedi. Farklı bir birime yönlendiriliyorsunuz. ")
 
-#global hasta_adi
-#global hasta_soyadi
-#global hasta_sikayet
 hasta_adi = ""
 hasta_soyadi = ""
 hasta_sikayet = ""
-
-
 
 def hasta_girisi():
     #hasta = Eczane()
@@ -211,7 +206,12 @@ def odeme(ilac_odeme):
 
 
 def hasta_bilgilerini_goruntuleme():
-    pass
+    with open("hasta_bilgileri.txt", encoding="utf-8") as dosya:
+        bilgiler = dosya.readlines()
+        bilgiler = bilgiler.replace("\n","")
+        for bilgi in bilgiler:
+            print(bilgi)
+
 
 
 def main():
@@ -235,6 +235,6 @@ def main():
             quit()
         else:
             print("Yanlış tercihte bulundunuz. Tekrar deneyiniz.")
-
+hasta_bilgilerini_goruntuleme()
 hasta_girisi()
 
