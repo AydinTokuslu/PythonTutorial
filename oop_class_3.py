@@ -13,10 +13,12 @@ class kisi:
     @classmethod
     def kisi_sayisini_soyle(cls):  #cls, bunun class üzerinden kullanılacağını gösterir.
         return cls.kisi_sayisi
+
     @classmethod
     def string_ile_olustur(cls, str_):
         isim, yas = str_.split("-")
         return cls(isim, yas)
+
     @classmethod
     def dogum_yili_ile_olustur(cls, isim, dogum_yili):  # nesne ismi ile değil, class ismi ile çağrılır.
         return cls(isim, date.today().year - dogum_yili)  # burda cls, class (kisi) oluyor.

@@ -109,7 +109,8 @@ def hasta_kayit():
     #hasta = Eczane()
     print("Giriş yapılan hasta kayıtlı değildir. Yeni kayıt yapılacaktır.")
     hasta_adi = input("lütfen hasta adı giriniz : ")
-    hasta_list.append(hasta.hasta_adi)
+    #hasta_list.append(hasta.hasta_adi)
+    hasta_list.append(hasta_adi)
     print("Hasta kaydı tamamlanmıştır.\nReçete ekranına yönlendiriliyorsunuz....")
     for i in range(3):
         time.sleep(1)
@@ -161,7 +162,7 @@ def hasta_girisi():
     return hasta_adi, hasta_soyadi, hasta_sikayet
 
 
-def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
+def randevu_alma():
     #hasta = Eczane()
     print("Görevli Doktor Listesi : ")
     print("S.No : Doktor İsmi :         Branşı : ")
@@ -175,6 +176,9 @@ def randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet):
         muayene_gun = input("Lütfen muayene olmak istediğiniz günü giriniz : ")
         muayene_saati = input("Lütfen muayene olmak istediğiniz saati giriniz : ")
         #print(f"Sayın {hasta.get_hastaAdi()} {hasta.get_hastaSoyadi()}, {hasta.get_hastaSikayet()} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
+        global hasta_adi
+        global hasta_soyadi
+        global hasta_sikayet
         print(f"Sayın {hasta_adi} {hasta_soyadi}, {hasta_sikayet} şikayetiyle yapmış olduğunuz muayeneniz Dr.{doktor} ile {muayene_gun} günü ve saat {muayene_saati}'de yapılacaktır.")
     else:
         print("Yanlış doktor ismi girdiniz. Tekrar deneyiniz.")
@@ -224,7 +228,7 @@ def main():
         elif secim == "2":
             recete_kontrol(ilac_odeme)
         elif secim == "3":
-            randevu_alma(hasta_adi, hasta_soyadi, hasta_sikayet)
+            randevu_alma()
         elif secim == "4":
             odeme(ilac_odeme)
         elif secim == "5":

@@ -2,7 +2,7 @@
 # sınıf değişkeni - nesne değişkeni
 
 class calisan:
-    personel_sayisi = 0  # class variable yazarak tüm class'ta olmuş oldu
+    personel_sayisi = 0  # class variable yazarak tüm class'ta geçerli olmuş oldu
     #zam_orani = 1.1  # class variable
     def __init__(self,isim, maas):
         self.isim = isim
