@@ -9,6 +9,41 @@
 #     print(f"{number,i}x{number * i}=")
 #     #i += 1
 
-print(range(5))
-print(*range(5))  # * boşluklu yazdırıyor, 0 1 2 3 4
-print(*("seperate")) # * boşluklu yazdırıyor, s e p e r a t e
+# print(range(5))
+# print(*range(5))  # * boşluklu yazdırıyor, 0 1 2 3 4
+# print(*("seperate")) # * boşluklu yazdırıyor, s e p e r a t e
+# print(*range(10,0,-2)) # * boşluklu yazdırıyor, 10 8 6 4 2
+#
+# numbers = [0,1,2,3,4,5]
+# text = ["zero","one","two","three","four","five"]
+#
+# for x,y in zip(text, numbers): # index sırasıyla zipler, birleştirir
+#     print(x, ":", y)  # zero : 0
+
+# even = []
+# odd = []
+# for i in range(1,11):
+#     if i % 2 == 0:
+#         even.append(i)
+#     else:
+#         odd.append(i)
+# print(even)
+# print(odd)
+
+# numbers = [11, 36, 33, 66, 89, 21, 32, 16, 10]
+# even = []
+# odd = []
+# for i in numbers:
+#     if i % 2 == 0:
+#         even.append(i)
+#     else:
+#         odd.append(i)
+# print(f"The number of even numbers : {len(even)}")
+# print(f"The number of odd numbers : {len(odd)}")
+
+# for i in range(1,10):
+#     for j in range(1,10):
+#         print(f"{i}"*j)
+
+# for i in range(1, 10):
+#     print(f"{i}" * i)
