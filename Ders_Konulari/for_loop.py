@@ -47,3 +47,15 @@
 
 # for i in range(1, 10):
 #     print(f"{i}" * i)
+
+# names = ["susan", "tom", "edward"]
+# mood = ["happy", "sad"]
+#
+# for i in names:
+#     for k in mood:
+#         print(f"{i} is {k}")
+
+# for i in range(1,11):
+#     for k in range(1,11):
+#         print(f"{i} x {k} = {i*k}")
+
