@@ -1,8 +1,23 @@
 from data import question_data
+from question_model import Question
+from quiz_brain import QuizBrain
 
-class Question:
-    def __init__(self, text, answer): # text, answer = attribute
-        self.text = text
-        self.answer = answer
+question_bank = []
+for question in question_data:
+    question_text = question["text"]
+    question_answer = question["answer"]
+    new_question = Question(question_text, question_answer)  # Question() constructor
+    question_bank.append(new_question)
+# print(len(question_bank))
+
+quiz = QuizBrain(question_bank)
+
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("You've completed the quiz")
+print(f"Your final score was : {quiz.score}/{quiz.question_number}")
+
+
 
 
