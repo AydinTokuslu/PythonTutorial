@@ -40,8 +40,8 @@ def ortalama(*args):
 def fonk(**kwargs): # **kwargs : istediğin sayıda istediğin kadar keyword argument girebilirsin demek
     print(kwargs)
 #fonk(ad = "ali", soyad = "çalışkan", yas = 34)
-# *args : istediğiniz kadar PARAMETRE girebilirsiniz demek.
-# **kwargs : istediğin sayıda istediğin kadar KEYWORD ARGUMENT girebilirsin demek
+# *args : istediğiniz kadar PARAMETRE (arguments =args) girebilirsiniz demek.
+# **kwargs : istediğin sayıda istediğin kadar KEYWORD ARGUMENT (kwargs) girebilirsin demek
 # keyword : kwargs
 
 def fonk2(zorunlu, *args, **kwargs):
