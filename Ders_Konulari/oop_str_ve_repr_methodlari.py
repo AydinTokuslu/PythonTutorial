@@ -1,9 +1,9 @@
-# magic methodlar, python'da gömülü özel fonksiyonlardır.  __ le başlarlar.
+# magic methodlar, python'da gömülü özel fonksiyonlardır.  __ ile başlarlar.
 # Yaptıkları iş, bir class tanımladığımızda onun üzerinde yapılablecek işlemleri belirlememizi sağlar.
 # 2 tane önemli magic fonksiyon : __str__ ve __repr__
 # __str__ ve __repr__ : Oluşturduğumuz class'dan ürettiğimiz bir nesnenin nasıl string'e dönüştürüleceği,
 # yani yazdır dediğimizde ekrana nasıl yazdırılacağını belirtir, kullanımları farklıdır.
-# __str__ : kullanıcı için, __repr__ : kod yazan kendimiz için
+# __str__ : kullanıcı için, __repr__ : kod yazan developer kendimiz için
 
 # from datetime import date
 # # a = "Python"

@@ -56,7 +56,7 @@ yonetici1 = Yonetici("Metin", "Al", 10000)
 # yonetici1.calisanlari_goster()
 #
 yonetici2 = Yonetici("Feyyaz", "Beşiktaş", 11000, [yazilimci1, yazilimci2, calisan1])
-# yonetici2.calisanlari_goster()
+yonetici2.calisanlari_goster()
 
 # bir class'ın, başka bir class'ın alt mı üst class mı olduğunu kontrol etmek için; isinstance() ve issubclass() ile sorgularız.
 print(isinstance(yonetici2, Calisan))  # True

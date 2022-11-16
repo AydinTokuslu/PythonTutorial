@@ -31,10 +31,45 @@
 # print(list.__add__([1,2,3], [4,5,6]))# aslında list toplama bu şekilde
 
 class Mylist(list):
-    pass
-liste1 = Mylist([1,2,3])
-liste2 = Mylist([4,5,6])
+    def __add__(self, other):
+        if len(self) != len(other):
+            return "Bu elemanlar toplanamaz"
+        else:
+            result = Mylist()
+            for i in range(len(self)):
+                result.append(self[i] + other[i])
+        return result
+
+    def __sub__(self, other):
+        if len(self) != len(other):
+            return "Bu elemanlar çıkarılamaz"
+        else:
+            result = Mylist()
+            for i in range(len(self)):
+                result.append(self[i] - other[i])
+        return result
+
+    def __eq__(self, other):
+        if sum(self) == sum(other):
+            return True
+        return False
+    def __abs__(self):  # abs = mutlak değer
+        result = Mylist()
+        for i in self:
+            if i >= 0:
+                result.append(i)
+            else:
+                result.append(-1 * i)
+        return result
+
+
+liste1 = Mylist([1,2,-3])
+liste2 = Mylist([-4,5,-6])
 
 print(liste1 + liste2)
+print(liste1 - liste2)
+print(liste1 == liste2)
+print(abs(liste1))
+print(abs(liste2))
 
 
