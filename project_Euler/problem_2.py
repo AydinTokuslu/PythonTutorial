@@ -5,17 +5,17 @@
 #
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 # find the sum of the even-valued terms.
-fibonacci = [1,2]
-sum = 0
-sum1 = 0
-for i in range (2,33):
-    if fibonacci[i-1] + fibonacci[i-2] < 4000000:
-        sayi = fibonacci[i-1] + fibonacci[i-2]
-        fibonacci.append(sayi)
-        if fibonacci[i-2] % 2 == 0:
-            sum += fibonacci[i-2]
-    else:
-        break
+# fibonacci = [1,2]
+# sum = 0
+# sum1 = 0
+# for i in range (2,33):
+#     if fibonacci[i-1] + fibonacci[i-2] < 4000000:
+#         sayi = fibonacci[i-1] + fibonacci[i-2]
+#         fibonacci.append(sayi)
+#         if fibonacci[i-2] % 2 == 0:
+#             sum += fibonacci[i-2]
+#     else:
+#         break
             #print(fibonacci[i-2])
 #print(fibonacci)
 print(sum)
