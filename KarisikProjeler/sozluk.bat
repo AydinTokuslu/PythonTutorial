@@ -1,0 +1,1 @@
+@C:\Users\aydin\AppData\Local\Programs\Python\Python310\python sozluk.py
