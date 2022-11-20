@@ -24,7 +24,7 @@ while game_is_on:
 
     snake.move()
 
-# 3. step : control the snake
+
 
 
 
