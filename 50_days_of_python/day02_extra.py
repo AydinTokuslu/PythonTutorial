@@ -11,13 +11,13 @@
 def check_duplicates(list):
     dublicate = []
     for i in list:
-        #print(i)
-        dublicate.append(i)
-    if i in dublicate:
-        return i
-    else:
-        return "no dublicates"
+        if i not in dublicate:
+            dublicate.append(i)
+        else:
+            return f"dublicate is {i}"
+    return "no dublicates"
+
 
 fruits = ['orange', 'apple', 'banana', 'apple']
 names = ['Yoda', 'Moses', 'Joshua', 'Mark']
-print(check_duplicates(names))
+print(check_duplicates(fruits))
