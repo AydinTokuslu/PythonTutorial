@@ -5,11 +5,11 @@
 # function should return a 1.
 
 def only_floats(a,b):
-    if type(a) == "<class 'float'>" and type(b) == "<class 'float'>":
+    if isinstance(a, float) and isinstance(b, float):
         return 2
-    elif type(a) == "<class 'float'>" or type(b) == "<class 'float'>":
+    elif isinstance(a, float) or isinstance(b, float):
         return 1
     else:
         return 0
 
-print(only_floats(12.1, 23.2))
+print(only_floats(12.1, 23))
