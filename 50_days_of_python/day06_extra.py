@@ -4,9 +4,9 @@
 # your code should return [0, 5, 7, 8, 0].
 
 def zeroed(list):
-    if list[0].isdigit():
+    if list[0] % 2 == 0 or list[0] % 2 == 1:
         list[0] = 0
-    elif list[-1].isdigit():
+    if list[-1] %2 == 0 or list[-1] % 2 == 1:
         list[-1] = 0
     return list
 
