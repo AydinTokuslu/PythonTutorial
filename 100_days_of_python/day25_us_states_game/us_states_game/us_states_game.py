@@ -31,14 +31,18 @@ while len(guessed_states) < 50:
     #print(answer_state)
 
     if answer_state == "Exit":
-        missing_states = []
-        for state in all_states:
-            if state not in guessed_states:
-                missing_states.append(state)
-        #print(missing_states)
+        # missing_states = []
+        # for state in all_states:
+        #     if state not in guessed_states:
+        #         missing_states.append(state)
+        # #print(missing_states)
+        # kısa yolu !!!!!!!
+        missing_states = [state for state in all_states if state not in guessed_states]
+
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
         break
+
     #if answer_state is one of the states in all the states of the 50_states.csv
     if answer_state in all_states:
         guessed_states.append(answer_state)
