@@ -218,7 +218,7 @@ def hasta_bilgilerini_goruntuleme():
             # print(soyad)
             # print(bolum)
             dosya_m = open("Migren_hastalari.txt", "a", encoding="utf-8")
-            if bolum == "Migren":
+            if bolum == "Migren": # hastalığı migren olanalrı dosyaya yazdırma
                 #dosya_m.write(ad+ "-"+soyad+"-"+bolum+"\n")
                 dosya_m.write(ad)
                 dosya_m.write(" " * (25 -len(ad)))
@@ -252,6 +252,6 @@ def main():
             quit()
         else:
             print("Yanlış tercihte bulundunuz. Tekrar deneyiniz.")
-hasta_bilgilerini_goruntuleme()
-#hasta_girisi()
+#hasta_bilgilerini_goruntuleme()
+hasta_girisi()
 

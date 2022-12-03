@@ -5,12 +5,11 @@ def kayitlari_listele():
     read_file()
     #print(f"Rehberdeki Kayıt Sayısı : {}")  # bu çalışmıyor.
 
-def kayit_ara(name, surname):
+def kayit_ara():
     print("Kayıt Arama Bölümü")
-    name = print("aramak istediğiniz kişinin ismini giriniz : ")
-    records_list = read_file()
-    if name in records_list:
-       kayitlari_listele()
+    aranan_isim = print("aramak istediğiniz kişinin ismini giriniz : ")
+    if aranan_isim in records_list:
+        print(f"{name} {surname} {tel_number}")
 
 def read_file():
     with open("kayit_listesi.txt","r", encoding="utf-8") as file:
@@ -37,10 +36,11 @@ def kayit_ekle():
     surname = input("Soyisim : ")
     tel_number = input("Telefon numarası : ")
     print(f"Yeni kayıt : {name} {surname} {tel_number}\nYeni Kayıt Eklendi")
-    kayit_dict = {"name": name, "surname": surname, "tel number": tel_number}
-    records_list.append(kayit_dict)
+    #kayit_dict = {"name": name, "surname": surname, "tel number": tel_number}
+    #records_list.append(kayit_dict)
     with open("kayit_listesi.txt","a", encoding="utf-8") as file:
         file.write(name+" "+surname+" "+tel_number+" "+"\n")
+        records_list.append(file)
 
 
 
@@ -52,30 +52,38 @@ def kayit_sil():
         kayitlari_listele()
 
 
-def menu():
+# def menu_loop():
+#     while True:
+#         display_menu()
+#         option = input("Seçenek (1-5): \n")
+#         if option.isdigit() and 1 <= int(option) <= 5:
+#             break
+#     return option
+
+
+def display_menu():
+    print("""
+1-Kayıtları Listele
+2-Kayıt Ara
+3-Kayıt Ekle
+4-Kayıt Sil
+5-Çıkış
+""")
+def main_loop():
     while True:
-        print("""
-    1-Kayıtları Listele
-    2-Kayıt Ara
-    3-Kayıt Ekle
-    4-Kayıt Sil
-    5-Çıkış
-    
-        """)
-        option = input("Lütfen tercihinizi giriniz >>  ")
+        display_menu()
+        #option = menu_loop()
+        option = input("Seçenek (1-5): ")
         if option == "1":
             kayitlari_listele()
         elif option == "2":
-            kayit_ara(name, surname)
+            kayit_ara()
         elif option == "3":
             kayit_ekle()
         elif option == "4":
             kayit_sil()
         elif option == "5":
-            exit()
-        else:
-            print("Yanlış tercihte bulundunuz, tekrar deneyiniz")
+            break
 
 
-
-menu()
+main_loop()
