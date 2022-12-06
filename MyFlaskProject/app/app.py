@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 # web sayfasına erişim, bilgileri okuma projesi
 app = Flask(__name__)
@@ -23,7 +23,8 @@ def toplam():
         number2 = request.form.get("number2")
         return render_template("number.html", total = int(number1) + int(number2))
     else:
-        return render_template("number.html")
+        #return render_template("number.html")
+        return redirect(url_for("index"))
 #
 # @app.route("/search")
 # def search():
