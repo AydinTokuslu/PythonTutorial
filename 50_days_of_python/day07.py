@@ -3,3 +3,5 @@
 # should be separated by dots(.) For example, if you pass 6 as
 # an argument, your function should return ‘0.1.2.3.4.5’.
 
+def string_range():
+    pass
