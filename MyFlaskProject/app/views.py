@@ -1,13 +1,33 @@
-from flask import Flask, render_template, redirect, url_for, request
-
+from flask import Flask, render_template, redirect, url_for, request, session, make_response
+from itsdangerous import Signer, BadSignature
 # web sayfasına erişim, bilgileri okuma projesi
 app = Flask(__name__)
+app.secret_key = b"?039eruif3__"
+# b = byte cinsinden şifreyi yazıyoruz
 
 
 @app.route("/")  # decoratör
-def Definition():   # herhangi bir fonksiyon ismi veriyoruz.
-    #return "ilk Flask denemesi"
+def Definition():
+    session['name'] = "Ahmet"
+    session['username'] = "ahmet123"
     return "<html><body><h1>ilk Flask denemesi</h1></body></html>"
+# @app.route("/")  # decoratör
+# def Definition():   # herhangi bir fonksiyon ismi veriyoruz.
+#     # cookies
+#     signer = Signer("secret key")
+#     signed_name = request.cookies.get("name")
+#     try:
+#         name = signer.unsign(signed_name).decode()
+#         print('name', name)
+#     except BadSignature:
+#         print("bad signature")
+#
+#     signed_name = signer.sign("Mehmet")
+#     response = make_response("<html><body><h1>ilk Flask denemesi</h1></body></html>")
+#     response.set_cookie('name', signed_name)
+#     #return "ilk Flask denemesi"
+#     #return "<html><body><h1>ilk Flask denemesi</h1></body></html>"
+#     return response
 
 
 @app.route("/hello")
