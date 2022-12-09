@@ -4,4 +4,11 @@
 # an argument, your function should return ‘0.1.2.3.4.5’.
 
 def string_range():
-    pass
+    number = input("please enter a number : ")
+    for i in range(0, int(number)):
+        if i == int(number)-1:
+            print("{}".format(i), end="")
+        else:
+            print("{}.".format(i), end="")
+
+string_range()
