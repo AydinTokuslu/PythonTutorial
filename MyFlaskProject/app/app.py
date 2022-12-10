@@ -40,6 +40,5 @@ def toplam():
 # def deleteId(id):  # Dinamik URL Yapmak
 #     return "Id: " + id
 
-
 if __name__ == "__main__":
     app.run(debug=True)
