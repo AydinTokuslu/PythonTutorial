@@ -5,15 +5,15 @@
 
 def biggest_odd(num):
     list_nums = []
+    list_nums_int = []
     for i in range(len(num)):
-        x = int(num) % 10
-        list.append(x)
-        y = int(num) / 10
-        num = y
-
-
+        list_nums.append(num[i])
     print(list_nums)
+    for i in range(len(list_nums)):
+        list_nums_int.append(int(list_nums[i]))
+    print(max(list_nums_int))
 
 
 num = "23569"
+
 biggest_odd(num)
