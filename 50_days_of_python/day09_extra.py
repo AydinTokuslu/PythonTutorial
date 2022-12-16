@@ -7,5 +7,28 @@
 # 4, 6, 7, 9, 0, 0]. If you pass [2, 1, 4, 7, 6] as your argument,
 # your code should return [1, 2, 4, 6, 7].
 
-def zeros_last():
-    pass
+
+numbers = [1, 4, 6, 0, 7,0,9]
+def zeros_last(*nums):
+    last_list = []
+    count_zero = 0
+    if 0 in nums:
+        for i in nums:
+            #last_list.append(i)
+            if i == 0:
+                count_zero +=1
+            else:
+                 last_list.append(i)
+        for i in range(count_zero):
+            last_list.append(0)
+    else:
+        for i in nums:
+            last_list.append(i)
+            last_list.sort()
+    return last_list
+
+
+
+#numbers = [1, 4, 6, 0, 7,0,9]
+#numbers = [2, 1, 4, 7, 6]
+print(zeros_last(*numbers))
