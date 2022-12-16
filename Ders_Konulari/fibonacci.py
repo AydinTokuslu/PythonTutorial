@@ -3,8 +3,6 @@
 
 def fibonacci():
     sayi = int(input("fibonacci serisini durdurmak için bir sayı giriniz : "))
-    a = 1
-    #toplam = 0
     genel_toplam = 2
     fibo = [0, 1, 1]
     for i in range(2, sayi):
