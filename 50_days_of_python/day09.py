@@ -9,9 +9,14 @@ def biggest_odd(num):
     for i in range(len(num)):
         list_nums.append(num[i])
     print(list_nums)
+    max_num = 0
     for i in range(len(list_nums)):
         list_nums_int.append(int(list_nums[i]))
-    print(max(list_nums_int))
+    for i in range(len(list_nums_int)):
+        if list_nums_int[i] > max_num :
+            max_num = list_nums_int[i]
+    #print(max(list_nums_int))
+    print(max_num)
 
 
 num = "23569"
