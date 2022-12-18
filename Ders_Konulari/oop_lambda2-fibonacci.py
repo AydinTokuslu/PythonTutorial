@@ -1,4 +1,4 @@
-# Verilen bir listenin içinde bulunan sözlük itemlarını sıralamak
+
 # fibonacciye göre bulalım, 0,1,2,3,5,8,13 ....
 
 def fibonacci(length):
