@@ -12,5 +12,5 @@ def count_dots(str):
     return count
 
 
-a="he.lp."
+a="h.e.l.p."
 print(count_dots(a))
