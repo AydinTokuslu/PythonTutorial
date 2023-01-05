@@ -5,8 +5,9 @@
 # fruits = {'fruit': 'apple', 'color': 'green'}
 
 def longest_value(dict):
-    max = 0
+    max = 1
     for i in dict:
+        #print(i)
         #print(dict[i])
         if len(dict[i]) > max:
             max = len(dict[i])
