@@ -3,35 +3,32 @@
 # calculator should take input from users. The calculator should be
 # able to handle ZeroDivisionError, NameError, and ValueError.
 
+import operator
 def calculator():
-    print("""
-    1-add
-    2-subtract
-    3-divide
-    4-multiply
-
-    """)
-    islem=input("Please select a basic math operation: ")
-    num1=int(input("enter first number : "))
-    num2=int(input("enter second number : "))
-    while True:
-        if islem=="1":
-            try:
-                total=num1+num2
-
-            except ValueError:
-                print("please ")
-        elif islem=="3":
-            if num1 != 0 or num2 != 0:
-                try:
-                    total=num1/num2
-                except ZeroDivisionError:
-                    print("numbers can't be zero, please enter a number ")
-
-
-    return total
+    try:
+        num1 = int(input("Enter number: "))
+        # asking the user to pick an operator
+        opt = input("Pick operator(+,-,*,/) : ")
+        num2 = int(input('Enter another number: '))
+        if opt not in ['+', '-', '*', '/'] or len(opt) > 1:
+            print('Please enter a valid operator')
+    except ValueError:
+        print('Please enter a valid number')
+    except ZeroDivisionError:
+         print('You cannot divide a number by zero.Try again')
+    else:
+        if opt == '+':
+            return f'ans is: {operator.add(num1, num2)}'
+        elif opt == '-':
+            return f'ans is: {operator.sub(num1, num2)}'
+        elif opt == '*':
+            return f'ans is: {operator.mul(num1, num2)}'
+        elif opt == '/':
+            return f' ans is: {operator.truediv(num1, num2)}'
+    return 'Try again'
 
 print(calculator())
+
 
 
 
