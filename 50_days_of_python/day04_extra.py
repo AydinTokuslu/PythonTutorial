@@ -4,7 +4,7 @@
 # length), the function should return zero (0). For example, the list
 # below should return 2.
 # words1 = ["Hate", "remorse", "vengeance"]
-#  And this list below, shoul return zero (0)
+#  And this list below, should return zero (0)
 # words2 = ["Love", "Hate"]
 
 def word_index(list):

@@ -16,7 +16,7 @@ students = ['Male', 'Female', 'female', 'male', 'male', 'male',
 def tuple_of_student_sex(list):
     male_count = 0
     female_count = 0
-    for student in students:
+    for student in list:
         if student.lower() == "male":
             male_count += 1
             #print("male count : ", male_count)
