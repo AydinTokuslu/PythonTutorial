@@ -1,5 +1,5 @@
 # Write a function called your_age. This function asks a student
-# to enter their , and then it returns their age. For example, if
+# to enter their name, and then it returns their age. For example, if
 # a user enters Peter as their name, your function should return,
 #  "Hi, Peter, you are 27 years old." This function reads data
 # from the database (dictionary below). If the name is not in the
