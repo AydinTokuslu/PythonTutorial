@@ -15,5 +15,5 @@ def all_the_same(s):
 
 
 
-ssl=["Mary", "Mary", "Many"]
+ssl=["Mary", "Mary", "Mary"]
 print(all_the_same(ssl))

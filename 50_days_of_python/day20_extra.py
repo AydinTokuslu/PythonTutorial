@@ -20,8 +20,6 @@ def reversed_list(str):
 
     return new_str[::-1]
 
-
-
 str1="leArning is hard, bUt if You appLy youRself you can achieVe success"
 
 print(reversed_list(str1))

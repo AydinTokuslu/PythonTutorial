@@ -40,7 +40,6 @@ def find_index(arr: list, n: int) -> list:
         for j in arr:
             list1.append(n)
     return list1
-    return list1
 
 
 lst1 = [1, 2, 4, 6, 7, 7]
